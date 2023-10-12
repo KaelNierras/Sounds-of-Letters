@@ -16,6 +16,7 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <style scoped>
 .Title, .Subtitle{
+  padding: 5px;
   background-color: black;
   border-radius: 10px;
 }
@@ -43,6 +44,7 @@ import { RouterLink, RouterView } from 'vue-router'
 }
 
 .router {
+  margin-top: 30px;
   border: 5px solid black;
   border-radius: 20px;
   background: white;
