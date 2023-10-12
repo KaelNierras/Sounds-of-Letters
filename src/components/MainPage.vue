@@ -68,10 +68,38 @@ document.addEventListener('animationend', (event) => {
 <style>
 .grid {
   display: grid;
-  grid-template-columns: repeat(9, 1fr);
-  grid-gap: 5px; /* Define the gap between grid items */
-  justify-content: center; /* Horizontally center the items */
-  align-items: center; /* Vertically center the items */
+  grid-template-columns: repeat(9, 1fr); /* Default to 9 columns */
+  grid-gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(6, 1fr); /* 6 columns for screens up to 1200px wide */
+    grid-gap: 3px;
+  }
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for screens up to 900px wide */
+    grid-gap: 3px;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for screens up to 600px wide */
+    grid-gap: 1px;
+  }
+}
+
+@media (max-width: 400px) {
+  .grid {
+    grid-template-columns: 1fr; /* 1 column for screens up to 400px wide */
+    grid-gap: 1px;
+  }
 }
 
 .grid-item {
