@@ -1,4 +1,9 @@
 <template>
+  <div class="header">
+      <h1 class="Title">AMIKAZE LETTER SOUNDS</h1>
+      <p class="Subtitle">By: Jeramie M. De Los Santos.</p>
+  </div>
+
   <div class="grid">
     <div v-for="letter in letters" :key="letter.id" class="grid-item">
       <img 
@@ -66,12 +71,44 @@ document.addEventListener('animationend', (event) => {
 </script>
 
 <style>
+.Title, .Subtitle {
+  padding: 5px;
+  background-image: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient colors */
+  border-radius: 10px;
+}
+.header {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 130px;
+  text-align: center;
+  padding: 5px;
+  color: white; /* Tomato red text color */
+  font-family: 'Comic Sans MS', cursive, sans-serif; /* Playful font */
+  min-width: 1000px;
+}
+
+.header h1 {
+  font-size: 3em;
+  margin-bottom: 5px;
+}
+
+.header p {
+  font-size: 1.2em;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(9, 1fr); /* Default to 9 columns */
   grid-gap: 5px;
   justify-content: center;
   align-items: center;
+  margin-top: 15px;
+  border: 5px solid black;
+  border-radius: 20px;
+  background: white;
 }
 
 @media (max-width: 1200px) {
