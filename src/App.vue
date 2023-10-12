@@ -3,65 +3,72 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <RouterView />
+  <div class="main">
+    <div class="header">
+      <h1>AMIKAZE LETTER SOUNDS</h1>
+      <p>By: Jeramie M. De Los Santos.</p>
+    </div>
+    <div class="router">
+      <RouterView />
+    </div>
+  </div>
 </template>
 
 <style scoped>
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  font-size: 12px;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 130px;
   text-align: center;
-  margin-top: 2rem;
+  padding: 5px;
+  background-color: #87CEEB; /* Sky blue background */
+  color: white; /* Tomato red text color */
+  font-family: 'Comic Sans MS', cursive, sans-serif; /* Playful font */
+  min-width: 1000px;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
+.header h1 {
+  font-size: 3em;
+  margin-bottom: 5px;
 }
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
+.header p {
+  font-size: 1.2em;
 }
 
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+.router {
+  border: 5px solid black;
+  border-radius: 20px;
+  background: white;
 }
 
-nav a:first-of-type {
-  border: 0;
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding-top: 100px;
+  min-width: 1000px;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+@media (max-width: 320px) {
+  .header h1, .header p {
+    font-size: 0.8em;
   }
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
+@media (min-width: 600px) {
+  body {
+    resize: both;
+    overflow: auto;
   }
 }
 </style>
