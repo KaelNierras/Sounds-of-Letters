@@ -3,7 +3,7 @@
     <div v-for="letter in letters" :key="letter.id" class="grid-item">
       <img 
         :src="`/images/letters/${letter.name}.png`" 
-        :width="100" 
+        :width="150" 
         :height="auto" 
         alt="Letter" 
         @click="playAnimationAndSound(letter.name)"
