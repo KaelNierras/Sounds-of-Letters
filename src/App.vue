@@ -5,8 +5,8 @@ import { RouterLink, RouterView } from 'vue-router'
 <template>
   <div class="main">
     <div class="header">
-      <h1>AMIKAZE LETTER SOUNDS</h1>
-      <p>By: Jeramie M. De Los Santos.</p>
+      <h1 class="Title">AMIKAZE LETTER SOUNDS</h1>
+      <p class="Subtitle">By: Jeramie M. De Los Santos.</p>
     </div>
     <div class="router">
       <RouterView />
@@ -15,12 +15,12 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <style scoped>
+.Title, .Subtitle{
+  background-color: black;
+  border-radius: 10px;
+}
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
+  margin-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,11 +28,7 @@ import { RouterLink, RouterView } from 'vue-router'
   height: 130px;
   text-align: center;
   padding: 5px;
-  background-image: url('/images/header_bg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: black; /* Tomato red text color */
+  color: white; /* Tomato red text color */
   font-family: 'Comic Sans MS', cursive, sans-serif; /* Playful font */
   min-width: 1000px;
 }
@@ -58,7 +54,6 @@ import { RouterLink, RouterView } from 'vue-router'
   align-items: center;
   flex-direction: column;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  padding-top: 100px;
   min-width: 1000px;
 }
 
