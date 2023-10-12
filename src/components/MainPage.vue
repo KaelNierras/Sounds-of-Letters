@@ -69,7 +69,6 @@ document.addEventListener('animationend', (event) => {
 .grid {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
-  grid-template-rows: repeat(3, 1fr);
   grid-gap: 5px; /* Define the gap between grid items */
   justify-content: center; /* Horizontally center the items */
   align-items: center; /* Vertically center the items */
