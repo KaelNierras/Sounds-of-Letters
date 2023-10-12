@@ -28,8 +28,11 @@ import { RouterLink, RouterView } from 'vue-router'
   height: 130px;
   text-align: center;
   padding: 5px;
-  background-color: #87CEEB; /* Sky blue background */
-  color: white; /* Tomato red text color */
+  background-image: url('/images/header_bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: black; /* Tomato red text color */
   font-family: 'Comic Sans MS', cursive, sans-serif; /* Playful font */
   min-width: 1000px;
 }
