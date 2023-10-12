@@ -2,7 +2,7 @@
   <div class="grid">
     <div v-for="letter in letters" :key="letter.id" class="grid-item">
       <img 
-        :src="`public/images/letters/${letter.name}.png`" 
+        :src="`./public/images/letters/${letter.name}.png`" 
         :width="170" 
         :height="auto" 
         alt="Letter" 
@@ -52,7 +52,7 @@ function playAnimationAndSound(letterName) {
   element.classList.add('animate'); // Add 'animate' class for animation
 
   // Play sound
-  const audio = new Audio(`public/sounds/${letterName}.mp3`);
+  const audio = new Audio(`./public/sounds/${letterName}.mp3`);
   audio.play();
 }
 
