@@ -15,9 +15,9 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <style scoped>
-.Title, .Subtitle{
+.Title, .Subtitle {
   padding: 5px;
-  background-color: black;
+  background-image: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient colors */
   border-radius: 10px;
 }
 .header {
@@ -44,7 +44,7 @@ import { RouterLink, RouterView } from 'vue-router'
 }
 
 .router {
-  margin-top: 30px;
+  margin-top: 15px;
   border: 5px solid black;
   border-radius: 20px;
   background: white;
