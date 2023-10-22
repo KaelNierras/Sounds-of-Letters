@@ -3,7 +3,6 @@
       <h1 class="Title">AMIKAZE LETTER SOUNDS</h1>
       <p class="Subtitle">By: Jeramie M. De Los Santos.</p>
   </div>
-
   <div class="grid">
     <div v-for="letter in letters" :key="letter.id" class="grid-item">
       <img 
@@ -16,10 +15,8 @@
     </div>
   </div>
 </template>
-
 <script setup>
 import { ref } from 'vue';
-
 const letters = ref([
   { id: 1, name: 'A' },
   { id: 2, name: 'B' },
