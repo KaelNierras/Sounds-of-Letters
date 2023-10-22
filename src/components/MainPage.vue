@@ -3,17 +3,24 @@
       <h1 class="Title">AMIKAZE LETTER SOUNDS</h1>
       <p class="Subtitle">By: Jeramie M. De Los Santos.</p>
   </div>
-  <div class="grid">
-    <div v-for="letter in letters" :key="letter.id" class="grid-item">
-      <img 
-        :src="`/images/letters/${letter.name}.png`" 
-        :width="150" 
-        :height="auto" 
-        alt="Letter" 
-        @click="playAnimationAndSound(letter.name)"
-      /> 
+    <div class="grid">
+      <div v-for="letter in letters" :key="letter.id" class="grid-item">
+        <img 
+          :src="`/images/letters/${letter.name}.png`" 
+          :width="150" 
+          :height="auto" 
+          alt="Letter" 
+          @click="playAnimationAndSound(letter.name)"
+        /> 
+      </div>
     </div>
-  </div>
+    <div class="image" :class="{ 'wiggle': isWiggling }">
+      <img src="/images/Amik.png" 
+      :width="170" 
+      :height="auto" 
+      alt="Amik Avatar">
+    </div>
+ 
 </template>
 <script setup>
 import { ref } from 'vue';
@@ -46,6 +53,8 @@ const letters = ref([
   { id: 26, name: 'Z' },
 ]);
 
+const isWiggling = ref(false);
+
 function playAnimationAndSound(letterName) {
   // Play animation
   const element = document.querySelector(`img[src*="${letterName}.png"]`);
@@ -56,6 +65,14 @@ function playAnimationAndSound(letterName) {
   // Play sound
   const audio = new Audio(`/sounds/${letterName}.mp3`);
   audio.play();
+
+   // Start wiggling
+   isWiggling.value = true;
+  setTimeout(() => {
+    isWiggling.value = false;
+  }, 500); // Adjust the time based on your preference
+
+
 }
 
 // Remove animation class after animation ends
@@ -68,6 +85,18 @@ document.addEventListener('animationend', (event) => {
 </script>
 
 <style>
+
+.main {
+  position: relative;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+
 .Title, .Subtitle {
   padding: 5px;
   background-image: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient colors */
@@ -167,4 +196,14 @@ document.addEventListener('animationend', (event) => {
 .animate {
   animation: pulse 0.5s; /* Use pulse animation */
 }
+
+.image.wiggle {
+    animation: wiggle 0.5s;
+  }
+
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    75% { transform: rotate(-5deg); }
+  }
 </style>
