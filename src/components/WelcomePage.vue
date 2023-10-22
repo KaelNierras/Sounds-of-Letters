@@ -3,17 +3,22 @@
     <h1 class="mt-4">Hello, Welcome to</h1>
     <h1 class="mt-1 Subtitle">AMIKAZE LETTER SOUNDS!</h1>
     <button 
-      class="btn btn-primary w-80" 
-      @click="startLoadingAndPlaySound(Welcome)"
+      class="btn btn-warning w-80 " 
+      @click="startLoadingAndPlaySound()"
       :disabled="loading"
     >
       <span v-if="loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-      <span v-else>Get Started</span>
+      <span v-else class="text">Get Started</span>
     </button>
   </div>
 </template>
 
 <style>
+
+.text{
+  font-weight:600;
+  font-family: 'Comic Sans MS', cursive, sans-serif; /* Playful font */
+}
 .Title, .Subtitle {
   padding: 5px;
   color: white;
@@ -28,18 +33,18 @@ import { ref } from 'vue';
 import router from '../router';
 const loading = ref(false);
 
-function playSound(letterName) {
-  const audio = new Audio(`/sounds/${letterName}.mp3`);
+function playSound(){
+  const audio = new Audio(`/sounds/Welcome.mp3`);
   audio.play(); 
 }
 
-function startLoadingAndPlaySound(letterName) {
+function startLoadingAndPlaySound() {
   loading.value = true;
-  playSound(letterName);
+  playSound();
   setTimeout(() => {
     loading.value = false;
     // Redirect to another page using router
     router.push('/home');
-  }, 3000);
+  }, 5000);
 }
 </script>
