@@ -1,18 +1,26 @@
 <script setup>
 import { RouterLink, RouterView} from 'vue-router'
-import { onMounted} from 'vue'
+import { onMounted, ref} from 'vue'
 
 import 'bootstrap/dist/css/bootstrap.css';
 
+const audio = new Audio(`/sounds/Background.mp3`);
+const audioIsPlaying = ref(false);
+
 function playBackground(){
-  const audio = new Audio(`/sounds/Background.mp3`);
   audio.play(); 
+  audioIsPlaying.value = true;
 }
 
 onMounted(() => {
-  playBackground();
+  document.addEventListener('click', () => {
+    if (!audioIsPlaying.value) {
+      playBackground();
+    }
+  });
 });
 </script>
+
 
 <template>
   <div class="main">
