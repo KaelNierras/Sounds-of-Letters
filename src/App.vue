@@ -1,6 +1,17 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView} from 'vue-router'
+import { onMounted} from 'vue'
+
 import 'bootstrap/dist/css/bootstrap.css';
+
+function playBackground(){
+  const audio = new Audio(`/sounds/Background.mp3`);
+  audio.play(); 
+}
+
+onMounted(() => {
+  playBackground();
+});
 </script>
 
 <template>

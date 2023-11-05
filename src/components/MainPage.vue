@@ -66,12 +66,12 @@ function playAnimationAndSound(letterName) {
   const audio = new Audio(`/sounds/${letterName}.mp3`);
   audio.play();
 
-   // Start wiggling
-   isWiggling.value = true;
+  // Start wiggling
+  isWiggling.value = true;
+  
   setTimeout(() => {
     isWiggling.value = false;
   }, 500); // Adjust the time based on your preference
-
 
 }
 
@@ -84,7 +84,7 @@ document.addEventListener('animationend', (event) => {
 });
 </script>
 
-<style>
+<style scoped>
 
 .main {
   position: relative;
@@ -92,8 +92,8 @@ document.addEventListener('animationend', (event) => {
 
 .image {
   position: absolute;
-  top: 0;
-  right: 0;
+  top:.5in;
+  right: 2in;
 }
 
 
@@ -112,7 +112,7 @@ document.addEventListener('animationend', (event) => {
   text-align: center;
   padding: 5px;
   color: white; /* Tomato red text color */
-  font-family: 'Comic Sans MS', cursive, sans-serif; /* Playful font */
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; /* Playful font */
   min-width: 1000px;
 }
 
@@ -131,7 +131,7 @@ document.addEventListener('animationend', (event) => {
   grid-gap: 5px;
   justify-content: center;
   align-items: center;
-  margin-top: 15px;
+  margin-top: 50px;
   border: 5px solid black;
   border-radius: 20px;
   background: white;
@@ -199,11 +199,13 @@ document.addEventListener('animationend', (event) => {
 
 .image.wiggle {
     animation: wiggle 0.5s;
+    
   }
 
   @keyframes wiggle {
     0%, 100% { transform: rotate(0deg); }
     25% { transform: rotate(5deg); }
     75% { transform: rotate(-5deg); }
+    
   }
 </style>
